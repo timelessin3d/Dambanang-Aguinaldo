@@ -387,7 +387,7 @@ header{
     rgba(0,0,0,0.55),
     rgba(0,0,0,0.55)
   ),
-  url("https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Aduinaldo%27s_House_Front.jpg");
+  url("https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/Aduinaldo's_House_Front.jpg");
 
   background-position:center;
   background-size:cover;
@@ -466,12 +466,28 @@ margin:auto;
 .preview-container{
   display:flex;
   justify-content:space-between;
-  align-items:left;
+  align-items:flex-start;
   gap:80px;
+
+  flex-wrap:wrap;
 }
 
-.preview-text{
-  width:50%;
+.preview-text,
+.preview-image{
+  flex:1;
+  min-width:320px;
+}
+
+.preview-image{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+
+.preview-image img{
+  width:100%;
+  max-width:650px;
+  height:auto;
 }
 
 .preview-text h2{
@@ -535,14 +551,14 @@ margin:auto;
   display:flex;
   justify-content:space-between;
   gap:80px;
+
+  flex-wrap:wrap;
 }
 
-.historical-box{
-  width:50%;
-}
-
+.historical-box,
 .visit-box{
-  width:50%;
+  flex:1;
+  min-width:320px;
 }
 
 .historical-box h2,
@@ -565,7 +581,7 @@ margin:auto;
 
 .historical-box p{
   font-size: 16px;
-  color:(--white);
+  color:var(--white);
   line-height:1.9;
   margin-bottom:25px;
 
@@ -785,8 +801,11 @@ footer{
    MOBILE DEVICES
 ================================================== */
 
-@media(max-width:768px){
+/* ==================================================
+   MOBILE DEVICES
+================================================== */
 
+@media(max-width:768px){
 
   /* =========================
      HEADER
@@ -815,61 +834,44 @@ footer{
   ========================= */
 
   .logo-center{
+    order:1;
+
     position:static;
     transform:none;
 
     display:flex;
     justify-content:center;
     align-items:center;
+
+    margin-bottom:10px;
   }
 
   .logo-center img{
     width:170px;
     height:auto;
-    margin-bottom: -25px;
+    margin-bottom:-25px;
   }
 
-/* =========================
-   MOBILE NAV LAYOUT
-========================= */
+  /* =========================
+     MOBILE NAV LAYOUT
+  ========================= */
 
-.nav-left,
-.nav-right{
-  width:100%;
+  .nav-left,
+  .nav-right{
+    width:100%;
 
-  display:grid;
-  grid-template-columns:1fr 1fr;
+    display:grid;
+    grid-template-columns:1fr 1fr;
 
-  gap:22px;
-}
+    gap:22px;
+  }
 
-/* TOP ROW */
-.nav-left{
-  order:2;
-}
-
-/* BOTTOM ROW */
-.nav-right{
-  order:3;
-}
-
-/* LOGO ALWAYS ON TOP */
-.logo-center{
-  order:1;
-
-  position:static;
-  transform:none;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  margin-bottom:10px;
-}
-
-  /* combine rows visually */
   .nav-left{
-    margin-bottom:-5px;
+    order:2;
+  }
+
+  .nav-right{
+    order:3;
   }
 
   /* =========================
@@ -906,12 +908,6 @@ footer{
     font-weight:700;
 
     letter-spacing:0.5px;
-  }
-
-  /* HOME ACTIVE */
-
-  .active-btn .nav-link{
-    color:var(--yellow-orange);
   }
 
   /* =========================
@@ -970,7 +966,8 @@ footer{
   ========================= */
 
   .hero{
-    padding-top:260px;
+    padding-top:320px;
+    min-height:100vh;
   }
 
   .hero h2{
@@ -982,7 +979,6 @@ footer{
     padding:0 10px;
   }
 
-}
   /* =========================
      SECTIONS
   ========================= */
@@ -1005,6 +1001,14 @@ footer{
     width:100%;
   }
 
+  .preview-image{
+    justify-content:center;
+  }
+
+  .preview-image img{
+    max-width:100%;
+  }
+
   .preview-text h2,
   .historical-box h2,
   .visit-box h2{
@@ -1015,6 +1019,7 @@ footer{
   .historical-box h4,
   .visit-box h4{
     font-size:16px;
+    padding-left:0;
   }
 
   .preview-text p,
@@ -1022,6 +1027,15 @@ footer{
   .visit-item p{
     font-size:14px;
     line-height:1.7;
+    padding-left:0;
+  }
+
+  .visit-item{
+    gap:12px;
+  }
+
+  .section-line{
+    margin-bottom:40px;
   }
 
   /* =========================
@@ -1045,6 +1059,7 @@ footer{
   }
 
 }
+
 </style>
 </head>
 
@@ -1053,7 +1068,7 @@ footer{
     										BACKGROUND MUSIC PILIPINAS KONG MAHAL 
 ================================================================================================================================================================================================ -->
 <audio id="bg-music" autoplay loop>
-  <source src="https://timelessin3d.github.io/Dambanang-Aguinaldo/bgmusic/Pilipinas_Kong_Mahal.mp3" type="audio/mpeg">
+  <source src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/music/Pilipinas_Kong_Mahal.mp3" type="audio/mpeg">
 </audio>
 
 <!-- SOUND BUTTON -->
@@ -1101,15 +1116,15 @@ footer{
 
           <div class="dropdown-column">
 
-          <a href="ABOUT.html#historical-background" class="dropdown-link"> 
+          <a href="about.html#historical-background" class="dropdown-link"> 
   <span>Historical Background</span>
 </a>
 
-<a href="ABOUT.html#cultural-significance" class="dropdown-link">
+<a href="about.html#cultural-significance" class="dropdown-link">
   <span>Cultural Significance</span>
 </a>
 
-<a href="ABOUT.html#architectural-features" class="dropdown-link">
+<a href="about.html#architectural-features" class="dropdown-link">
   <span>Architectural Features</span>
 </a>
 
@@ -1138,7 +1153,7 @@ footer{
   </div>
   <!-- CENTER NAV -->
 <div class="logo-center">
-   <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png">
+   <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" alt="Aguinaldo Shrine Logo">
   </div>
 
   <!-- RIGHT NAV -->
@@ -1167,18 +1182,18 @@ footer{
 
           <div class="dropdown-column">
 
-            <a href="VIRTUAL-EXTERIOR.html" class="dropdown-link">
+            <a href="virtual-exterior.html" class="dropdown-link">
   <span>Exterior</span>
             </a>
 
-            <a href="VIRTUAL.html" class="dropdown-link">
+            <a href="virtual.html" class="dropdown-link">
   <span>Grandhall</span>
             </a>
 
-            <a href="VIRTUAL-UNKNOWN.html" class="dropdown-link">
+            <a href="virtual-unknown.html" class="dropdown-link">
               <span>UNKNOWN</span>
             </a>
-            
+            </a>
           </div>
 
         </div>
@@ -1191,7 +1206,7 @@ footer{
 
     <div class="nav-item">
 
-      <a href="RESEARCHERS.html" class="nav-link">
+      <a href="researchers.html" class="nav-link">
   RESEARCHERS
       </a>
 
@@ -1221,7 +1236,7 @@ footer{
       Dambanang Aguinaldo for Heritage Preservation
     </p>
 
-    <a href="ABOUT.html" class="hero-btn">
+    <a href="about.html" class="hero-btn">
       LEARN MORE
     </a>
 
@@ -1255,7 +1270,7 @@ footer{
       virtual navigation.
     </p>
 
-    <a href="ABOUT.html" class="preview-btn">
+    <a href="about.html" class="preview-btn">
       LEARN MORE
     </a>
 
@@ -1264,7 +1279,7 @@ footer{
   <!-- IMAGE SIDE -->
   <div class="preview-image">
 
-    <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/3d_sample.png" alt="3D Preview">
+    <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/3d_sample.png" alt="3D Preview">
 
   </div>
 
@@ -1356,7 +1371,7 @@ footer{
 
   <div class="footer-container">
 
-  <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" alt="The Dambanang Aguinaldo" style="width:250px; height:auto;">
+  <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" alt="The Dambanang Aguinaldo" style="width:250px; height:auto;">
 
     <p>Interactive Heritage Visualization</p>
 
