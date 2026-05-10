@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | The Dambanang Aguinaldo</title>
+
+<!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root{
+  --jaguar:#06030A;
+  --white:#ffffff;
+  --blaze-orange:#f96800;
+  --yellow-orange:#ffb200;
+  --dark-purple:#3a1f63;
+  --meteorite:#412b6b;
+  --butterfly-bush:#5c3e94;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--jaguar);
+  color:var(--white);
+  font-family:'Montserrat', sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:var(--white);
+}
+
+/* =========================
+   HEADER CSS
+========================= */
+
+header{
+  width:100%;
+  height:75px;
+
+  background:
+  radial-gradient(circle at 50% 50%,
+  var(--dark-purple),
+  #000000);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 40px;
+
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+}
+
+
+/* NAV */
+
+.nav-left,
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.nav-item a{
+  display:block;
+  padding:10px 14px;
+}
+
+/* CENTER LOGO */
+.logo-center{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO SIZE */
+.logo-center img{
+  width: 200px; 
+  height: auto;
+}
+/* LINKS */
+
+.nav-link{
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:1px;
+
+  transition:0.3s ease;
+}
+
+.nav-link:hover{
+  color:var(--yellow-orange);
+  transform:scale(1.08);
+}
+
+/* ACTIVE BUTTON */
+
+.active-btn{
+  background:var(--yellow-orange);
+
+  height:75px;
+  min-width:88px;
+
+  padding:0 24px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  margin-top:0px;
+
+  box-shadow:
+  -5px 5px 10px rgba(249,104,0,0.3);
+}
+
+.active-btn .nav-link{
+  color:#000;
+}
+
+.active-btn .nav-link:hover{
+  color:#000;
+}
+
+/* =========================
+   DROPDOWN DOT
+========================= */
+
+.dropdown-dot{
+  width:20px;
+  height:20px;
+
+  background:var(--blaze-orange);
+
+  border-radius:50%;
+
+  position:relative;
+
+  box-shadow:
+  -3px 3px 8px rgba(255,178,0,0.5);
+
+  transition:0.35s ease;
+}
+
+.dropdown-dot::after{
+  content:"";
+
+  position:absolute;
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%, -30%);
+
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:8px solid white;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo h1{
+  position:relative;
+
+  font-family:serif;
+  font-size:32px;
+  line-height:1.1;
+
+  text-align:center;
+  font-weight:400;
+
+  text-shadow:
+  -15px 15px 100px rgba(249,104,0,1);
+}
+
+.small-the{
+  position:absolute;
+
+  top:5px;
+  left:-35px;
+
+  font-size:16px;
+}
+
+.aguinaldo{
+  display:block;
+  margin-left:-15px;
+}
+
+/* =========================
+   ABOUT DROPDOWN
+========================= */
+
+.about-dropdown-wrapper{
+  position:relative;
+}
+
+.about-dropdown-wrapper summary::-webkit-details-marker{
+  display:none;
+}
+
+.about-dropdown-summary{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  cursor:pointer;
+  list-style:none;
+}
+
+.about-dropdown-wrapper[open] .dropdown-dot{
+  transform:rotate(180deg);
+}
+.about-dropdown-wrapper .nav-link {
+  color: var(--yellow-orange);
+}
+
+/* =========================
+   VIRTUAL DROPDOWN
+========================= */
+
+.virtual-dropdown-wrapper{
+  position:relative;
+}
+
+.virtual-dropdown-wrapper summary::-webkit-details-marker{
+  display:none;
+}
+
+.virtual-dropdown-summary{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  cursor:pointer;
+  list-style:none;
+}
+
+.virtual-dropdown-wrapper[open] .dropdown-dot{
+  transform:rotate(180deg);
+}
+
+/* =========================
+   DROPDOWN MENU
+========================= */
+
+.dropdown-menu{
+  position:fixed;
+
+  top:75px;
+  left:0;
+
+  width:100%;
+
+  background:var(--yellow-orange);
+
+  padding:40px 60px;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.25);
+
+  z-index:999;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(-10px);
+
+  transition:0.35s ease;
+}
+
+
+/* SHOW MENU */
+
+.about-dropdown-wrapper[open] .dropdown-menu,
+.virtual-dropdown-wrapper[open] .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.dropdown-grid{
+  width:100%;
+}
+
+.dropdown-column{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  width:100%;
+  gap:40px;
+}
+
+/* =========================
+   DROPDOWN LINKS
+========================= */
+.dropdown-link{
+  position:relative;
+
+  padding-bottom:10px;
+
+  margin-bottom:0;
+
+  width:auto;
+  flex:1;
+  min-width:180px;
+}
+
+.dropdown-link span{
+  font-size:15px;
+  font-weight:500;
+
+  color:white;
+
+  transition:0.35s ease;
+}
+
+.dropdown-link::after{
+  content:"";
+
+  width:100%;
+  height:2px;
+
+  background:white;
+
+  position:absolute;
+  left:0;
+  bottom:0;
+
+  transform:scaleX(1);
+
+  transform-origin:left;
+
+  transition:
+  transform 0.45s ease-in-out,
+  background 0.35s ease;
+}
+
+.dropdown-link:hover::after{
+  background:var(--blaze-orange);
+  transform:scaleX(0.92);
+}
+
+.dropdown-link:hover span{
+  color:var(--blaze-orange);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+  width:100%;
+  min-height:100vh;
+
+  background:#d6e7ef;
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  padding-top:75px;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+  z-index:10;
+}
+
+.hero h2{
+  font-size:70px;
+  font-weight:800;
+  line-height:1.05;
+}
+
+.hero p{
+font-size:16px;
+line-height:1.7;
+max-width:700px;
+margin:auto;
+}
+
+.hero-btn{
+  display:inline-block;
+
+  margin-top:35px;
+
+  padding:14px 42px;
+
+  background:var(--blaze-orange);
+
+  border-radius:40px;
+
+  font-weight:700;
+  font-size:14px;
+
+  transition:0.3s ease;
+}
+
+.hero-btn:hover{
+  transform:scale(1.08);
+}
+
+
+/* =========================
+   PREVIEW SECTION
+========================= */
+
+.preview-section{
+  background:#000;
+  padding:80px 138px;
+}
+
+.section-line{
+  width:100%;
+  height:2px;
+
+  background:rgba(249,104,0,0.5);
+
+  margin-bottom:60px;
+}
+
+.preview-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:left;
+  gap:80px;
+}
+
+.preview-text{
+  width:50%;
+}
+
+.preview-text h2{
+  font-size:58px;
+  font-weight:800;
+  margin-bottom:40px;
+
+  padding-left:0px;
+}
+
+.preview-text h4{
+  color:var(--blaze-orange);
+  margin-bottom:30px;
+  padding-left:38px;
+
+}
+
+.preview-text p{
+  font-size:16px;
+  color:#d8d8d8;
+  line-height:1.8;
+  margin-bottom:20px;
+  padding-left:38px;
+
+}
+
+
+.preview-btn{
+  transition:0.3s ease;
+
+  display:inline-block;
+
+  margin-top:30px;
+
+  background:var(--blaze-orange);
+
+  padding:14px 40px;
+
+  border-radius:40px;
+
+  font-size:14px;
+  font-weight:700;
+}
+
+.preview-btn:hover{
+  transform:scale(1.08);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section{
+  background:#000;
+  padding:70px 60px 120px;
+}
+
+
+.section-line{
+  width:100%;
+  height:2px;
+
+  background:rgba(249,104,0,0.5);
+
+  margin-bottom:60px;
+}
+
+.anchor-offset{
+  position:relative;
+  top:-280px;
+}
+
+.about-section h1{
+  font-size:28px;
+  font-weight:800;
+
+  margin-bottom:60px;
+}
+
+.about-block{
+  margin-bottom:70px;
+}
+
+.about-block h3{
+  color:var(--blaze-orange);
+
+  margin-bottom:25px;
+
+  font-size:22px;
+}
+
+.about-block p{
+  color:#d8d8d8;
+
+  line-height:1.8;
+  font-size:15px;
+}
+
+/* =========================
+   FOOTER DESIGN CCS
+========================= */
+
+footer{
+  background: radial-gradient(circle at center, #3a1f63, #000);
+  padding:50px 20px;
+  text-align:center;
+}
+
+.footer-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.footer-container p{
+  font-size:11px;
+  color:#ededed;
+}
+
+.copyright{
+  color:#ffb200;
+  font-size:8px;
+  font-style:italic;
+}
+
+/* ==================================================
+   TABLET DEVICES
+   768px | 8 columns | 32px margins
+================================================== */
+
+@media(max-width:1024px){
+
+  /* GLOBAL SECTION SPACING */
+
+  .preview-section,
+  .info-section{
+    padding-left:32px;
+    padding-right:32px;
+  }
+
+  header{
+    padding:0 32px;
+  }
+
+  /* LOGO */
+
+  .logo-center img{
+    width:160px;
+  }
+
+  /* HERO */
+
+  .hero h2{
+    font-size:52px;
+  }
+
+  .hero p{
+    max-width:540px;
+    font-size:15px;
+  }
+
+  /* PREVIEW + INFO */
+
+  .preview-container,
+  .info-container{
+    flex-direction:column;
+    gap:70px;
+  }
+
+  .preview-text,
+  .historical-box,
+  .visit-box{
+    width:100%;
+  }
+
+  .preview-text h2,
+  .historical-box h2,
+  .visit-box h2{
+    font-size:42px;
+  }
+
+  /* REMOVE EXTRA PADDING */
+
+  .preview-text h4,
+  .preview-text p,
+  .historical-box h4,
+  .historical-box p{
+    padding-left:0;
+    margin-right:0;
+  }
+
+  /* DROPDOWN */
+
+  .dropdown-menu{
+    padding:35px 32px;
+  }
+
+.dropdown-column{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  width:100%;
+  gap:40px;
+}
+  .dropdown-link{
+    width:auto;
+  }
+}
+
+
+/* ==================================================
+   MOBILE DEVICES
+================================================== */
+
+@media(max-width:768px){
+
+  /* HEADER */
+
+
+  header{
+    height:auto;
+
+    padding:20px 20px 25px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(circle at center,
+    var(--dark-purple),
+    #000);
+
+    gap:18px;
+  }
+
+  /* =========================
+     LOGO
+  ========================= */
+
+  .logo-center{
+    position:static;
+    transform:none;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    order:1;
+
+    margin-bottom:10px;
+  }
+
+  .logo-center img{
+    width:170px;
+    height:auto;
+    margin-bottom:-25px;
+  }
+
+  /* =========================
+     MOBILE NAV LAYOUT
+  ========================= */
+
+  .nav-left,
+  .nav-right{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:22px;
+  }
+
+  /* TOP ROW */
+  .nav-left{
+    order:2;
+    margin-bottom:-5px;
+  }
+
+  /* BOTTOM ROW */
+  .nav-right{
+    order:3;
+  }
+
+  /* =========================
+     BUTTON STYLE
+  ========================= */
+
+  .active-btn,
+  .nav-item,
+  .about-dropdown-summary,
+  .virtual-dropdown-summary{
+
+    width:100%;
+    height:35px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,0.06);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0 18px;
+
+    box-sizing:border-box;
+  }
+
+  /* HOME ACTIVE */
+
+  .active-btn{
+    background:rgba(255,255,255,0.06);
+  }
+
+  .active-btn .nav-link{
+    color:var(--yellow-orange);
+  }
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  .nav-link{
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:0.5px;
+  }
+
+  /* =========================
+     DROPDOWN SUMMARY
+  ========================= */
+
+  .about-dropdown-summary,
+  .virtual-dropdown-summary{
+    justify-content:center;
+    gap:12px;
+  }
+
+  /* =========================
+     DROPDOWN DOT
+  ========================= */
+
+  .dropdown-dot{
+    width:22px;
+    height:22px;
+  }
+
+  .dropdown-dot::after{
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-bottom:8px solid white;
+
+    border-top:none;
+
+    transform:translate(-50%, -70%);
+  }
+
+  /* =========================
+     DROPDOWN MENU
+  ========================= */
+
+  .dropdown-menu{
+    position:absolute;
+
+    top:75px;
+    left:0;
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:16px;
+  }
+
+  .dropdown-column{
+    flex-direction:column;
+    gap:14px;
+  }
+
+.dropdown-link{
+  width:100%;
+  min-width:unset;
+  flex:none;
+  overflow:hidden;
+}
+
+  /* =========================
+     ABOUT SECTION
+  ========================= */
+
+  .about-section{
+    padding:260px 16px 80px;
+  }
+
+  .about-section h1{
+    font-size:28px;
+    line-height:1.2;
+
+    margin-bottom:40px;
+  }
+
+  .about-block h3{
+    font-size:20px;
+  }
+
+  .about-block p{
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  /* FIX ANCHOR SPACING */
+
+  .anchor-offset{
+    top:-260px;
+  }
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  footer{
+    padding:40px 16px;
+  }
+
+  footer img{
+    width:180px !important;
+  }
+
+  .footer-container p{
+    font-size:10px;
+  }
+
+  .copyright{
+    font-size:8px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+  
+<!-- =====================
+     HEADER
+===================== -->
+
+<header>
+
+  <!-- LEFT NAV -->
+  <div class="nav-left">
+
+    <!-- HOME -->
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">HOME</a>
+        </div>
+    <!-- ABOUT DROPDOWN -->
+<details class="about-dropdown-wrapper">
+  <summary class="about-dropdown-summary">
+    <span class="nav-link">ABOUT</span>
+    <div class="dropdown-dot"></div>
+  </summary>
+
+      <div class="dropdown-menu about-menu">
+        <div class="dropdown-grid">
+          <div class="dropdown-column">
+
+            <a href="about.html#historical-background" class="dropdown-link">
+              <span>Historical Background</span>
+            </a>
+
+            <a href="about.html#cultural-significance" class="dropdown-link">
+              <span>Cultural Significance</span>
+            </a>
+
+            <a href="about.html#architectural-features" class="dropdown-link">
+              <span>Architectural Features</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </details>
+
+  </div>
+
+  <!-- CENTER LOGO -->
+  <div class="logo-center">
+    <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" alt="Aguinaldo Shrine Logo">
+  </div>
+
+  <!-- RIGHT NAV -->
+  <div class="nav-right">
+
+    <!-- VIRTUAL TOUR DROPDOWN -->
+    <details class="virtual-dropdown-wrapper">
+
+      <summary class="virtual-dropdown-summary">
+        <span class="nav-link">VIRTUAL TOUR</span>
+        <div class="dropdown-dot"></div>
+      </summary>
+
+      <div class="dropdown-menu virtual-menu">
+        <div class="dropdown-grid">
+          <div class="dropdown-column">
+
+            <a href="virtual-exterior.html" class="dropdown-link">
+              <span>Exterior</span>
+            </a>
+
+            <a href="virtual.html" class="dropdown-link">
+              <span>Grandhall</span>
+            </a>
+
+            <a href="virtual-unknown.html" class="dropdown-link">
+              <span>UNKNOWN</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+    </details>
+
+    <!-- RESEARCHERS -->
+    <div class="nav-item">
+      <a href="researchers.html" class="nav-link">RESEARCHERS</a>
+    </div>
+
+  </div>
+
+</header>
+
+<!-- =====================
+     ABOUT CONTENT
+===================== -->
+
+<section class="about-section">
+
+
+<div class="section-line"></div>
+
+<div id="historical-background" class="anchor-offset"></div>
+
+<h1>HISTORICAL BACKGROUND</h1>
+
+<div class="about-block">
+
+<h3>About the Aguinaldo Shrine</h3>
+
+<p> Originally built in the 1840s and later expanded by the Aguinaldo family, the shrine served as the ancestral residence of Emilio Aguinaldo. The mansion reflects a blend of traditional Filipino and colonial architectural influences, showcasing both residential elegance and strategic design features adapted during the revolutionary era.</p>
+<br>
+<p>
+The Aguinaldo Shrine stands as one of the most significant historical landmarks in the Philippines. More than a residential home, the shrine symbolizes the country’s struggle for independence and the beginning of Filipino nationhood. Through its preserved 
+architecture, historical artifacts, and cultural symbolism, the shrine continues to educate future generations about the sacrifices and aspirations of the Filipino people during the revolutionary period.
+</p>
+
+</div>
+
+<div class="about-block">
+
+<h3>Declaration of Independence</h3>
+
+<p>
+On June 12, 1898, the Philippine Declaration of Independence was formally proclaimed from the balcony of the Aguinaldo residence in Kawit, Cavite. This historic event marked 
+the country's assertion of freedom from Spanish colonial rule and became one of the defining moments in Philippine history.
+</p>
+
+<br>
+<p>
+The balcony where the Philippine flag was first officially displayed remains one of the shrine’s most iconic and symbolic spaces, representing patriotism, sovereignty, and national identity.
+</p>
+</div>
+
+<div class="about-block">
+
+<h3>Emilio Aguinaldo</h3>
+
+<p>
+Emilio Aguinaldo was a revolutionary leader, military general, and the first President of the Philippines. 
+He played a major role in the Philippine Revolution against Spanish colonization and later in the struggle for independence.
+</p>
+
+<br>
+<p> His residence in Kawit became both a family home and a strategic center during the revolution. Today, the shrine preserves his legacy and 
+contributions to Philippine history through historical collections and architectural preservation.</p>
+</div>
+
+<div class="section-line"></div>
+
+<div id="cultural-significance" class="anchor-offset"></div>
+
+<h1>CULTURAL SIGNIFICANCE</h1>
+
+<div class="about-block">
+
+<h3>Architectural Symbolism</h3>
+
+<p>
+The architectural design of the shrine reflects the social status, political ideals, and patriotic symbolism of the revolutionary period. Decorative details, elevated spaces, and ceremonial areas within the structure symbolize authority, nationalism, and the aspirations for an independent nation.
+</p>
+
+</div>
+
+<div class="about-block">
+
+<h3>Design Functionality</h3>
+
+<p>
+Beyond its aesthetic qualities, the shrine was designed with practical and strategic purposes. The structure incorporates wide halls, elevated viewing areas, hidden passages, and ventilation systems suited for both residential living and political activities during times of conflict.
+</p>
+
+<br> 
+
+<p> Its layout demonstrates how architecture during the revolutionary era balanced comfort, security, and functionality.</p>
+</div>
+
+<div class="about-block">
+
+<h3>Representation of National Identity</h3>
+
+<p>
+The Aguinaldo Shrine represents Filipino resilience, patriotism, and cultural heritage. As a preserved historical landmark, it continues to strengthen public understanding of the nation’s revolutionary history and collective identity.
+</p>
+
+</div>
+
+<div class="section-line"></div>
+
+<div id="architectural-features" class="anchor-offset"></div>
+
+<h1>ARCHITECTURAL FEATURES</h1>
+
+<div class="about-block">
+
+<h3>Symbolism of the Philippine Independence</h3>
+
+<p>
+Several areas of the shrine symbolize the birth of Philippine independence, particularly the ceremonial balcony where independence was declared. The structure itself became a physical representation of the nation’s transition toward sovereignty and self-governance.
+</p>
+
+</div>
+
+<div class="about-block">
+
+<h3>Defensive and Protection Design</h3>
+
+<p>
+The shrine contains concealed and defensive architectural features designed during periods of political unrest and revolution. Historical accounts mention hidden compartments, secret passages, and strategic viewpoints intended for protection and surveillance.
+</p>
+
+</div>
+
+<div class="about-block">
+
+<h3>Concealed Structural Features</h3>
+
+<p>
+One of the most unique characteristics of the Aguinaldo Shrine is the presence of concealed architectural elements integrated within the structure. These hidden features were designed to provide security, protection, and strategic advantages during the revolutionary period.
+</p>
+<br> 
+<p> Historical accounts and preserved sections of the shrine reveal the existence of secret passages, hidden compartments, concealed doors, and observation points that were used for surveillance, escape, and the protection of important individuals and documents. Some areas of the house were intentionally designed to disguise access points, reflecting the political tensions and dangers experienced during the struggle for independence.</p>
+</div>
+
+<div class="about-block">
+
+<h3>Residential Function of the House</h3>
+
+<p>
+Despite its political and historical significance, the Aguinaldo Shrine originally served as a family residence. The structure includes living quarters, receiving areas, dining spaces, and traditional household layouts common in affluent Filipino homes during the Spanish colonial period.
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================================================================================================================
+     									FOOTER DETAILS
+====================================================================================================================================================== -->
+
+<footer>
+
+  <div class="footer-container">
+
+    <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" style="width:250px; height:auto;">
+
+    <p>Interactive Heritage Visualization</p>
+    <p>Bachelor of Multimedia Arts Thesis Project</p>
+    <p>St. Dominic College of Asia | 2026</p>
+
+    <p class="copyright">
+      © 2026 Dambanang Aguinaldo | Developed with Web Technologies and 3D Visualization Tools
+    </p>
+
+  </div>
+
+</footer>
+<!-- =====================================================================================================================================================
+     									Forda not overlapping choice box
+====================================================================================================================================================== -->
+
+<script>
+
+const dropdowns = document.querySelectorAll(
+  '.about-dropdown-wrapper, .virtual-dropdown-wrapper'
+);
+
+dropdowns.forEach((dropdown) => {
+
+  dropdown.addEventListener('toggle', () => {
+
+    if (dropdown.open) {
+
+      dropdowns.forEach((otherDropdown) => {
+
+        if (otherDropdown !== dropdown) {
+          otherDropdown.removeAttribute('open');
+        }
+
+      });
+
+    }
+
+  });
+
+});
+
+</script>
+</body>
+</html>
