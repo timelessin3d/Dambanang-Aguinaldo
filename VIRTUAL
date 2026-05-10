@@ -672,7 +672,7 @@ footer{
     										BACKGROUND MUSIC PILIPINAS KONG MAHAL 
 ================================================================================================================================================================================================ -->
 <audio id="bg-music" autoplay loop>
-  <source src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/music/gitara_ver.mp3" type="audio/mpeg">
+  <source src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" type="audio/mpeg">
 </audio>
 
 <!-- SOUND BUTTON -->
@@ -707,15 +707,15 @@ footer{
 
           <div class="dropdown-column">
 
-            <a href="about.html#historical-background" class="dropdown-link">
+            <a href="ABOUT.html#historical-background" class="dropdown-link">
               <span>Historical Background</span>
             </a>
 
-            <a href="about.html#cultural-significance" class="dropdown-link">
+            <a href="ABOUT.html#cultural-significance" class="dropdown-link">
               <span>Cultural Significance</span>
             </a>
 
-            <a href="about.html#architectural-features" class="dropdown-link">
+            <a href="ABOUT.html#architectural-features" class="dropdown-link">
               <span>Architectural Features</span>
             </a>
 
@@ -731,7 +731,7 @@ footer{
 
   <div class="logo-center">
 
-    <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" alt="Aguinaldo Shrine Logo">
+    <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" alt="Aguinaldo Shrine Logo">
 
   </div>
 
@@ -759,15 +759,15 @@ footer{
 
           <div class="dropdown-column">
 
-            <a href="virtual-exterior.html" class="dropdown-link">
+            <a href="VIRTUAL-EXTERIOR.html" class="dropdown-link">
               <span>Exterior</span>
             </a>
 
-            <a href="virtual.html" class="dropdown-link">
+            <a href="VIRTUAL.html" class="dropdown-link">
               <span>Grandhall</span>
             </a>
 
-            <a href="virtual-unknown.html" class="dropdown-link">
+            <a href="VIRTUAL-UNKNOWN.html" class="dropdown-link">
               <span>UNKNOWN</span>
             </a>
 
@@ -781,7 +781,7 @@ footer{
 
     <div class="nav-item">
 
-      <a href="researchers.html" class="nav-link">
+      <a href="RESEARCHERS.html" class="nav-link">
         RESEARCHERS
       </a>
 
@@ -842,7 +842,7 @@ src="https://sketchfab.com/models/42e003ba7f9e4634b5f5057c43c553ff/embed">
   <div class="footer-container">
 
     <img 
-    src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" 
+    src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" 
     alt="The Dambanang Aguinaldo"
     style="width:250px; height:auto;">
 
