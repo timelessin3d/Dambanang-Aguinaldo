@@ -947,15 +947,15 @@ footer{
         <div class="dropdown-grid">
           <div class="dropdown-column">
 
-            <a href="about.html#historical-background" class="dropdown-link">
+            <a href="ABOUT.html#historical-background" class="dropdown-link">
               <span>Historical Background</span>
             </a>
 
-            <a href="about.html#cultural-significance" class="dropdown-link">
+            <a href="ABOUT.html#cultural-significance" class="dropdown-link">
               <span>Cultural Significance</span>
             </a>
 
-            <a href="about.html#architectural-features" class="dropdown-link">
+            <a href="ABOUT.html#architectural-features" class="dropdown-link">
               <span>Architectural Features</span>
             </a>
 
@@ -969,7 +969,7 @@ footer{
 
   <!-- CENTER LOGO -->
   <div class="logo-center">
-    <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" alt="Aguinaldo Shrine Logo">
+    <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" alt="Aguinaldo Shrine Logo">
   </div>
 
   <!-- RIGHT NAV -->
@@ -987,15 +987,15 @@ footer{
         <div class="dropdown-grid">
           <div class="dropdown-column">
 
-            <a href="virtual-exterior.html" class="dropdown-link">
+            <a href="VIRTUAL-EXTERIOR.html" class="dropdown-link">
               <span>Exterior</span>
             </a>
 
-            <a href="virtual.html" class="dropdown-link">
+            <a href="VIRTUAL.html" class="dropdown-link">
               <span>Grandhall</span>
             </a>
 
-            <a href="virtual-unknown.html" class="dropdown-link">
+            <a href="VIRTUAL-UNKNOWN.html" class="dropdown-link">
               <span>UNKNOWN</span>
             </a>
 
@@ -1007,7 +1007,7 @@ footer{
 
     <!-- RESEARCHERS -->
     <div class="nav-item">
-      <a href="researchers.html" class="nav-link">RESEARCHERS</a>
+      <a href="RESEARCHERS.html" class="nav-link">RESEARCHERS</a>
     </div>
 
   </div>
@@ -1165,7 +1165,7 @@ Despite its political and historical significance, the Aguinaldo Shrine original
 
   <div class="footer-container">
 
-    <img src="https://hannahllamadodabu-pixel.github.io/Aguinaldo-Shrine/images/logo.png" style="width:250px; height:auto;">
+    <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" style="width:250px; height:auto;">
 
     <p>Interactive Heritage Visualization</p>
     <p>Bachelor of Multimedia Arts Thesis Project</p>
