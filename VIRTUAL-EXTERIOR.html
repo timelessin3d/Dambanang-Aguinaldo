@@ -401,6 +401,131 @@ footer{
   transform:scale(1.08);
   background:var(--blaze-orange);
 }
+/* =============================================================================================================================================================================================================
+   						INFO PANEL SYSTEM CSS
+============================================================================================================================================================================================================ */
+
+/* HIDDEN CHECKBOX */
+#panel-toggle{
+  display:none;
+}
+
+/* INFO BUTTON */
+.info-btn{
+  position:fixed;
+
+  bottom:90px;
+  right:20px;
+
+  width:55px;
+  height:55px;
+
+  border-radius:50%;
+
+  background:rgba(249,104,0,0.95);
+
+  color:white;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:28px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  z-index:3001;
+
+  transition:0.35s ease;
+
+  box-shadow:
+  0 0 18px rgba(249,104,0,0.45);
+}
+
+.info-btn:hover{
+  transform:scale(1.08);
+  background:var(--yellow-orange);
+}
+
+/* INFO PANEL */
+.info-panel{
+  position:fixed;
+
+  top:75px;
+  right:-420px;
+
+  width:360px;
+  height:calc(100vh - 75px);
+
+  padding:35px 30px;
+
+  background:rgba(25,10,45,0.58);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  border-top:4px solid var(--blaze-orange);
+
+  color:white;
+
+  z-index:3000;
+
+  overflow-y:auto;
+
+  transition:0.5s ease;
+}
+
+/* OPEN PANEL */
+#panel-toggle:checked ~ .info-panel{
+  right:0;
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+  position:absolute;
+
+  top:10px;
+  right:18px;
+
+  font-size:40px;
+
+  color:var(--blaze-orange);
+
+  cursor:pointer;
+}
+
+/* TITLE */
+.info-panel h2{
+  text-align:center;
+
+  font-size:24px;
+  line-height:1.4;
+
+  margin-top:18px;
+  margin-bottom:18px;
+}
+
+/* ORANGE LINE */
+.panel-line{
+  width:70%;
+  height:2px;
+
+  background:var(--blaze-orange);
+
+  margin:0 auto 25px;
+}
+
+/* TEXT */
+.info-panel p{
+  font-size:15px;
+  line-height:1.9;
+
+  text-align:justify;
+
+  margin-bottom:18px;
+}
+
 
 /* =========================
    RESPONSIVE
@@ -432,8 +557,6 @@ footer{
 }
 
 @media(max-width:768px){
-
- @media(max-width:768px){
 
   /* =========================
      HEADER
@@ -666,7 +789,7 @@ footer{
 </head>
 
 <body>
-<body>
+
 
 <!-- ===============================================================================================================================================================================================
     										BACKGROUND MUSIC PILIPINAS KONG MAHAL 
@@ -678,6 +801,42 @@ footer{
 <!-- SOUND BUTTON -->
 <button id="music-toggle">🔊</button>
 
+/* =============================================================================================================================================================================================================
+   						INFO PANEL SYSTEM STRUCTURE
+============================================================================================================================================================================================================ */
+
+<input type="checkbox" id="panel-toggle">
+
+<label for="panel-toggle" class="info-btn">
+  i
+</label>
+
+<div class="info-panel">
+
+  <label for="panel-toggle" class="close-btn">
+    &times;
+  </label>
+
+  <h2>
+    Exterior of the Dambanang Aguinaldo
+  </h2>
+
+  <div class="panel-line"></div>
+
+  <p>
+    The exterior of the Dambanang Aguinaldo reflects a blend of traditional 
+    Filipino and colonial architectural styles commonly seen in prominent 
+    ancestral homes during the late Spanish colonial period.
+  </p>
+
+  <p>
+    Its decorative balconies, carved wooden details, watch tower, and 
+    symbolic ornaments such as the carabao relief, stars, crossed swords, 
+    and Philippine flag-inspired motifs represent themes of nationalism, 
+    revolution, and Filipino identity embedded within the mansion’s design.
+  </p>
+
+</div>
 
 <header>
 
@@ -707,17 +866,17 @@ footer{
 
           <div class="dropdown-column">
 
-            <a href="ABOUT.html#historical-background" class="dropdown-link">
-              <span>Historical Background</span>
+           <a href="ABOUT.html#about-dambanang" class="dropdown-link">
+                <span>About the Dambanang Aguinaldo</span>
             </a>
 
-            <a href="ABOUT.html#cultural-significance" class="dropdown-link">
-              <span>Cultural Significance</span>
+            <a href="ABOUT.html#history-shrine" class="dropdown-link">
+                <span>History of the Aguinaldo Shrine</span>
             </a>
 
-            <a href="ABOUT.html#architectural-features" class="dropdown-link">
-              <span>Architectural Features</span>
-            </a>
+<a href="ABOUT.html#historical-spaces" class="dropdown-link">
+  <span>Historical Spaces</span>
+</a>
 
           </div>
 
@@ -764,11 +923,11 @@ footer{
             </a>
 
             <a href="VIRTUAL.html" class="dropdown-link">
-              <span>Grandhall</span>
+              <span>Hallway to Balcony </span>
             </a>
 
             <a href="VIRTUAL-UNKNOWN.html" class="dropdown-link">
-              <span>UNKNOWN</span>
+              <span>Grand Hall to Dining</span>
             </a>
 
           </div>
