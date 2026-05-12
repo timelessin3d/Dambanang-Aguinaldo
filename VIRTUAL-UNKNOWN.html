@@ -31,6 +31,10 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:var(--jaguar);
   color:var(--white);
@@ -49,7 +53,7 @@ img{
 }
 
 /* =========================
-   HEADER CSS
+   HEADER
 ========================= */
 
 header{
@@ -83,7 +87,6 @@ header{
 .nav-item{
   display:flex;
   align-items:center;
-  gap:8px;
 }
 
 .logo-center{
@@ -103,13 +106,12 @@ header{
   font-size:15px;
   font-weight:600;
   letter-spacing:1px;
-
   transition:0.3s ease;
 }
 
 .nav-link:hover{
   color:var(--yellow-orange);
-  transform:scale(1.08);
+  transform:scale(1.05);
 }
 
 .active-btn{
@@ -122,8 +124,6 @@ header{
   display:flex;
   justify-content:center;
   align-items:center;
-
-  box-shadow:none;
 }
 
 .active-btn .nav-link{
@@ -149,9 +149,12 @@ header{
 .dropdown-dot::after{
   content:"";
   position:absolute;
+
   top:50%;
   left:50%;
+
   transform:translate(-50%, -70%);
+
   border-left:5px solid transparent;
   border-right:5px solid transparent;
   border-bottom:8px solid white;
@@ -241,12 +244,16 @@ header{
   content:"";
   width:100%;
   height:2px;
+
   background:white;
+
   position:absolute;
   left:0;
   bottom:0;
+
   transform:scaleX(1);
   transform-origin:left;
+
   transition:
   transform 0.45s ease-in-out,
   background 0.35s ease;
@@ -299,12 +306,16 @@ header{
 }
 
 .viewer-spacing{
-  padding:30px 70px 80px 70px;
+  padding:30px 70px 80px;
 }
 
 /* =========================
-   SKETCHFAB CONTAINER
+   SKETCHFAB
 ========================= */
+
+.viewer-section{
+  width:100%;
+}
 
 .sketchfab-container{
   position:relative;
@@ -312,62 +323,131 @@ header{
   width:100%;
   height:calc(100vh - 75px);
 
-  margin:0 auto;
-
   overflow:hidden;
-
-  border-radius:0;
-
-  box-shadow:none;
 }
-
-/* IFRAME */
 
 .sketchfab-container iframe{
   width:100%;
   height:100%;
-  border:0;
+  border:none;
   display:block;
 }
 
 /* =========================
-   FOOTER
+   INFO PANEL
 ========================= */
 
-footer{
-  background:
-  radial-gradient(circle at center,
-  var(--dark-purple),
-  #000);
-
-  padding:50px 20px;
-
-  border-top:1px solid rgba(255,255,255,0.08);
-
-  text-align:center;
+#panel-toggle{
+  display:none;
 }
 
-.footer-container{
+.info-btn{
+  position:fixed;
+
+  bottom:90px;
+  right:20px;
+
+  width:55px;
+  height:55px;
+
+  border-radius:50%;
+
+  background:rgba(249,104,0,0.95);
+
+  color:white;
+
   display:flex;
-  flex-direction:column;
-  align-items:center;
   justify-content:center;
-  gap:10px;
+  align-items:center;
+
+  font-size:28px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  z-index:3001;
+
+  transition:0.35s ease;
+
+  box-shadow:
+  0 0 18px rgba(249,104,0,0.45);
 }
 
-.footer-center p{
-  color:#ededed;
-  font-size:11px;
-  line-height:1.8;
-  margin:2px 0;
+.info-btn:hover{
+  transform:scale(1.08);
+  background:var(--yellow-orange);
 }
 
-.copyright{
-  color:var(--yellow-orange);
-  font-weight:600;
-  font-size:8.6px;
-  font-style:italic;
-  margin-top:10px;
+.info-panel{
+  position:fixed;
+
+  top:75px;
+  right:-420px;
+
+  width:360px;
+  height:calc(100vh - 75px);
+
+  padding:35px 30px;
+
+  background:rgba(25,10,45,0.58);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  border-top:4px solid var(--blaze-orange);
+
+  color:white;
+
+  z-index:3000;
+
+  overflow-y:auto;
+
+  transition:0.5s ease;
+}
+
+#panel-toggle:checked ~ .info-panel{
+  right:0;
+}
+
+.close-btn{
+  position:absolute;
+
+  top:10px;
+  right:18px;
+
+  font-size:40px;
+
+  color:var(--blaze-orange);
+
+  cursor:pointer;
+}
+
+.info-panel h2{
+  text-align:center;
+
+  font-size:24px;
+  line-height:1.4;
+
+  margin-top:18px;
+  margin-bottom:18px;
+}
+
+.panel-line{
+  width:70%;
+  height:2px;
+
+  background:var(--blaze-orange);
+
+  margin:0 auto 25px;
+}
+
+.info-panel p{
+  font-size:15px;
+  line-height:1.9;
+
+  text-align:justify;
+
+  margin-bottom:18px;
 }
 
 /* =========================
@@ -403,6 +483,46 @@ footer{
 }
 
 /* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:
+  radial-gradient(circle at center,
+  var(--dark-purple),
+  #000);
+
+  padding:50px 20px;
+
+  border-top:1px solid rgba(255,255,255,0.08);
+
+  text-align:center;
+}
+
+.footer-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.footer-container p{
+  color:#ededed;
+  font-size:11px;
+  line-height:1.8;
+  margin:2px 0;
+}
+
+.footer-container .copyright{
+  color:var(--yellow-orange);
+  font-weight:600;
+  font-size:8.6px;
+  font-style:italic;
+  margin-top:10px;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -433,12 +553,6 @@ footer{
 
 @media(max-width:768px){
 
- @media(max-width:768px){
-
-  /* =========================
-     HEADER
-  ========================= */
-
   header{
     height:auto;
 
@@ -449,25 +563,12 @@ footer{
     align-items:center;
     justify-content:center;
 
-    background:
-    radial-gradient(circle at center,
-    var(--dark-purple),
-    #000);
-
     gap:18px;
   }
-
-  /* =========================
-     LOGO
-  ========================= */
 
   .logo-center{
     position:static;
     transform:none;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
 
     order:1;
 
@@ -476,13 +577,8 @@ footer{
 
   .logo-center img{
     width:170px;
-    height:auto;
     margin-bottom:-25px;
   }
-
-  /* =========================
-     MOBILE NAV LAYOUT
-  ========================= */
 
   .nav-left,
   .nav-right{
@@ -494,20 +590,14 @@ footer{
     gap:22px;
   }
 
-  /* TOP ROW */
   .nav-left{
     order:2;
     margin-bottom:-5px;
   }
 
-  /* BOTTOM ROW */
   .nav-right{
     order:3;
   }
-
-  /* =========================
-     BUTTON STYLE
-  ========================= */
 
   .active-btn,
   .nav-item,
@@ -526,11 +616,8 @@ footer{
     justify-content:center;
 
     padding:0 18px;
-
-    box-sizing:border-box;
   }
 
-  /* REMOVE EXTRA BG INSIDE */
   .virtual-dropdown-summary .active-btn{
     background:transparent;
     padding:0;
@@ -538,55 +625,11 @@ footer{
     min-width:auto;
   }
 
-  /* ACTIVE TEXT */
-
-  .active-btn .nav-link{
-    color:var(--yellow-orange);
-  }
-
-  /* =========================
-     TEXT
-  ========================= */
-
   .nav-link{
     font-size:17px;
     font-weight:700;
-
     letter-spacing:0.5px;
   }
-
-  /* =========================
-     DROPDOWN SUMMARY
-  ========================= */
-
-  .about-dropdown-summary,
-  .virtual-dropdown-summary{
-    justify-content:center;
-    gap:12px;
-  }
-
-  /* =========================
-     DROPDOWN DOT
-  ========================= */
-
-  .dropdown-dot{
-    width:22px;
-    height:22px;
-  }
-
-  .dropdown-dot::after{
-    border-left:5px solid transparent;
-    border-right:5px solid transparent;
-    border-bottom:8px solid white;
-
-    border-top:none;
-
-    transform:translate(-50%, -70%);
-  }
-
-  /* =========================
-     DROPDOWN MENU
-  ========================= */
 
   .dropdown-menu{
     position:absolute;
@@ -610,10 +653,6 @@ footer{
     width:100%;
   }
 
-  /* =========================
-     BREADCRUMB
-  ========================= */
-
   .breadcrumb-section{
     padding:260px 16px 25px;
   }
@@ -628,10 +667,6 @@ footer{
     font-size:14px;
   }
 
-  /* =========================
-     SKETCHFAB
-  ========================= */
-
   .viewer-spacing{
     padding:20px 16px 60px;
   }
@@ -640,9 +675,10 @@ footer{
     height:70vh;
   }
 
-  /* =========================
-     FOOTER
-  ========================= */
+  .info-panel{
+    width:100%;
+    right:-100%;
+  }
 
   footer{
     padding:40px 16px;
@@ -666,18 +702,53 @@ footer{
 </head>
 
 <body>
-<body>
 
-<!-- ===============================================================================================================================================================================================
-    										BACKGROUND MUSIC PILIPINAS KONG MAHAL 
-================================================================================================================================================================================================ -->
+<!-- BACKGROUND MUSIC -->
 <audio id="bg-music" autoplay loop>
   <source src="https://timelessin3d.github.io/Dambanang-Aguinaldo/bgmusic/gitara_ver.mp3" type="audio/mpeg">
 </audio>
 
-<!-- SOUND BUTTON -->
+<!-- MUSIC BUTTON -->
 <button id="music-toggle">🔊</button>
 
+<!-- INFO PANEL -->
+<input type="checkbox" id="panel-toggle">
+
+<label for="panel-toggle" class="info-btn">
+  i
+</label>
+
+<div class="info-panel">
+
+  <label for="panel-toggle" class="close-btn">
+    &times;
+  </label>
+
+  <h2>
+    Grand Hall to Dining
+  </h2>
+
+  <div class="panel-line"></div>
+
+  <p>
+    The Grand Hall and Family Dining Area serve as interconnected interior
+    spaces within the Dambanang Aguinaldo that reflect both formal gatherings
+    and daily family life of the Aguinaldo household.
+  </p>
+
+  <p>
+    These areas feature wide, open layouts with wooden furnishings, high ceilings,
+    and decorative colonial-era details that highlight the elegance of a traditional
+    Bahay-na-Bato residence.
+  </p>
+
+  <p>
+    The Grand Hall was primarily used for formal events, meetings, and social
+    gatherings, while the adjoining dining area served as a more intimate
+    space for family meals and private conversations.
+  </p>
+
+</div>
 
 <header>
 
@@ -701,22 +772,22 @@ footer{
 
       </summary>
 
-      <div class="dropdown-menu about-menu">
+      <div class="dropdown-menu">
 
         <div class="dropdown-grid">
 
           <div class="dropdown-column">
 
-            <a href="ABOUT.html#historical-background" class="dropdown-link">
-              <span>Historical Background</span>
+            <a href="ABOUT.html#about-dambanang" class="dropdown-link">
+              <span>About the Dambanang Aguinaldo</span>
             </a>
 
-            <a href="ABOUT.html#cultural-significance" class="dropdown-link">
-              <span>Cultural Significance</span>
+            <a href="ABOUT.html#history-shrine" class="dropdown-link">
+              <span>History of the Aguinaldo Shrine</span>
             </a>
 
-            <a href="ABOUT.html#architectural-features" class="dropdown-link">
-              <span>Architectural Features</span>
+            <a href="ABOUT.html#historical-spaces" class="dropdown-link">
+              <span>Historical Spaces</span>
             </a>
 
           </div>
@@ -731,7 +802,9 @@ footer{
 
   <div class="logo-center">
 
-    <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" alt="Aguinaldo Shrine Logo">
+    <img
+    src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png"
+    alt="Aguinaldo Shrine Logo">
 
   </div>
 
@@ -753,7 +826,7 @@ footer{
 
       </summary>
 
-      <div class="dropdown-menu virtual-menu">
+      <div class="dropdown-menu">
 
         <div class="dropdown-grid">
 
@@ -764,11 +837,11 @@ footer{
             </a>
 
             <a href="VIRTUAL.html" class="dropdown-link">
-              <span>Grandhall</span>
+              <span>Hallway to Balcony</span>
             </a>
 
             <a href="VIRTUAL-UNKNOWN.html" class="dropdown-link">
-              <span>UNKNOWN</span>
+              <span>Grand Hall to Dining</span>
             </a>
 
           </div>
@@ -793,56 +866,53 @@ footer{
 
 <section class="breadcrumb-section">
 
-<div class="breadcrumb">
+  <div class="breadcrumb">
 
-<a href="#">
-VIRTUAL TOUR
-</a>
+    <a href="#">
+      VIRTUAL TOUR
+    </a>
 
-<span>></span>
+    <span>></span>
 
-<p>UNKNOWN</p>
+    <p>Grand Hall to Dining</p>
 
-</div>
+  </div>
 
-<div class="section-line"></div>
+  <div class="section-line"></div>
 
 </section>
 
 <section class="viewer-section">
 
-<div class="sketchfab-container">
+  <div class="sketchfab-container">
 
-<iframe
-title="Grandhall"
-width="100%"
-height="100%"
-frameborder="0"
-allowfullscreen
-mozallowfullscreen="true"
-webkitallowfullscreen="true"
-allow="autoplay; fullscreen; xr-spatial-tracking"
-xr-spatial-tracking
-execution-while-out-of-viewport
-execution-while-not-rendered
-web-share
-src="https://sketchfab.com/models/42e003ba7f9e4634b5f5057c43c553ff/embed">
-</iframe>
+    <iframe
+    title="Grand Hall"
+    allowfullscreen
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+    allow="autoplay; fullscreen; xr-spatial-tracking"
+    xr-spatial-tracking
+    execution-while-out-of-viewport
+    execution-while-not-rendered
+    web-share
+    src="https://sketchfab.com/models/42e003ba7f9e4634b5f5057c43c553ff/embed">
+    </iframe>
 
-</div>
+  </div>
 
 </section>
+
 <div class="viewer-spacing">
-
   <div class="section-line"></div>
-
 </div>
+
 <footer>
 
   <div class="footer-container">
 
-    <img 
-    src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" 
+    <img
+    src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png"
     alt="The Dambanang Aguinaldo"
     style="width:250px; height:auto;">
 
@@ -861,6 +931,10 @@ src="https://sketchfab.com/models/42e003ba7f9e4634b5f5057c43c553ff/embed">
 </footer>
 
 <script>
+
+/* =========================
+   CLOSE OTHER DROPDOWNS
+========================= */
 
 const dropdowns = document.querySelectorAll(
   '.about-dropdown-wrapper, .virtual-dropdown-wrapper'
@@ -886,16 +960,14 @@ dropdowns.forEach((dropdown) => {
 
 });
 
-</script>
-<script>
+/* =========================
+   MUSIC TOGGLE
+========================= */
 
 const music = document.getElementById("bg-music");
 const musicToggle = document.getElementById("music-toggle");
 
-/* START WITH SOUND ON */
 music.volume = 0.4;
-
-/* TOGGLE BUTTON */
 
 musicToggle.addEventListener("click", () => {
 
@@ -914,5 +986,6 @@ musicToggle.addEventListener("click", () => {
 });
 
 </script>
+
 </body>
 </html>
