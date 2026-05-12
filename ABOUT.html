@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>About | The Dambanang Aguinaldo</title>
 
-<!-- GOOGLE FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   ROOT COLORS
-========================= */
 
 :root{
   --jaguar:#06030A;
@@ -29,18 +21,10 @@
   --butterfly-bush:#5c3e94;
 }
 
-/* =========================
-   GLOBAL
-========================= */
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
@@ -55,6 +39,10 @@ a{
   color:var(--white);
 }
 
+img{
+  width:100%;
+  display:block;
+}
 /* =========================
    HEADER CSS
 ========================= */
@@ -80,7 +68,6 @@ header{
   z-index:1000;
 }
 
-
 /* NAV */
 
 .nav-left,
@@ -102,26 +89,28 @@ header{
 }
 
 /* CENTER LOGO */
+
 .logo-center{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
 }
 
-/* LOGO SIZE */
+/* LOGO */
+
 .logo-center img{
-  width: 200px; 
-  height: auto;
+  width:200px;
+  height:auto;
 }
+
 /* LINKS */
 
 .nav-link{
   font-size:15px;
   font-weight:600;
   letter-spacing:1px;
-
   transition:0.3s ease;
 }
 
@@ -144,8 +133,6 @@ header{
   justify-content:center;
   align-items:center;
 
-  margin-top:0px;
-
   box-shadow:
   -5px 5px 10px rgba(249,104,0,0.3);
 }
@@ -158,9 +145,7 @@ header{
   color:#000;
 }
 
-/* =========================
-   DROPDOWN DOT
-========================= */
+/* DROPDOWN DOT */
 
 .dropdown-dot{
   width:20px;
@@ -192,78 +177,19 @@ header{
   border-top:8px solid white;
 }
 
-/* =========================
-   LOGO
-========================= */
+/* DROPDOWN */
 
-.logo h1{
-  position:relative;
-
-  font-family:serif;
-  font-size:32px;
-  line-height:1.1;
-
-  text-align:center;
-  font-weight:400;
-
-  text-shadow:
-  -15px 15px 100px rgba(249,104,0,1);
-}
-
-.small-the{
-  position:absolute;
-
-  top:5px;
-  left:-35px;
-
-  font-size:16px;
-}
-
-.aguinaldo{
-  display:block;
-  margin-left:-15px;
-}
-
-/* =========================
-   ABOUT DROPDOWN
-========================= */
-
-.about-dropdown-wrapper{
-  position:relative;
-}
-
-.about-dropdown-wrapper summary::-webkit-details-marker{
-  display:none;
-}
-
-.about-dropdown-summary{
-  display:flex;
-  align-items:center;
-  gap:12px;
-
-  cursor:pointer;
-  list-style:none;
-}
-
-.about-dropdown-wrapper[open] .dropdown-dot{
-  transform:rotate(180deg);
-}
-.about-dropdown-wrapper .nav-link {
-  color: var(--yellow-orange);
-}
-
-/* =========================
-   VIRTUAL DROPDOWN
-========================= */
-
+.about-dropdown-wrapper,
 .virtual-dropdown-wrapper{
   position:relative;
 }
 
+.about-dropdown-wrapper summary::-webkit-details-marker,
 .virtual-dropdown-wrapper summary::-webkit-details-marker{
   display:none;
 }
 
+.about-dropdown-summary,
 .virtual-dropdown-summary{
   display:flex;
   align-items:center;
@@ -273,13 +199,18 @@ header{
   list-style:none;
 }
 
+.about-dropdown-wrapper[open] .dropdown-dot,
 .virtual-dropdown-wrapper[open] .dropdown-dot{
   transform:rotate(180deg);
 }
 
-/* =========================
-   DROPDOWN MENU
-========================= */
+/* ACTIVE PAGE */
+
+.about-dropdown-wrapper .nav-link{
+  color:var(--yellow-orange);
+}
+
+/* MENU */
 
 .dropdown-menu{
   position:fixed;
@@ -306,9 +237,6 @@ header{
   transition:0.35s ease;
 }
 
-
-/* SHOW MENU */
-
 .about-dropdown-wrapper[open] .dropdown-menu,
 .virtual-dropdown-wrapper[open] .dropdown-menu{
   opacity:1;
@@ -316,9 +244,7 @@ header{
   transform:translateY(0);
 }
 
-/* =========================
-   GRID
-========================= */
+/* GRID */
 
 .dropdown-grid{
   width:100%;
@@ -332,15 +258,12 @@ header{
   gap:40px;
 }
 
-/* =========================
-   DROPDOWN LINKS
-========================= */
+/* LINKS */
+
 .dropdown-link{
   position:relative;
 
   padding-bottom:10px;
-
-  margin-bottom:0;
 
   width:auto;
   flex:1;
@@ -387,219 +310,177 @@ header{
 }
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 
 .hero{
   width:100%;
-  min-height:100vh;
+  height:500px;
 
-  background:#d6e7ef;
-
-  position:relative;
+  margin-top:75px;
 
   overflow:hidden;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-
-  padding-top:75px;
 }
 
-/* HERO CONTENT */
-
-.hero-content{
-  z-index:10;
-}
-
-.hero h2{
-  font-size:70px;
-  font-weight:800;
-  line-height:1.05;
-}
-
-.hero p{
-font-size:16px;
-line-height:1.7;
-max-width:700px;
-margin:auto;
-}
-
-.hero-btn{
-  display:inline-block;
-
-  margin-top:35px;
-
-  padding:14px 42px;
-
-  background:var(--blaze-orange);
-
-  border-radius:40px;
-
-  font-weight:700;
-  font-size:14px;
-
-  transition:0.3s ease;
-}
-
-.hero-btn:hover{
-  transform:scale(1.08);
-}
-
-
-/* =========================
-   PREVIEW SECTION
-========================= */
-
-.preview-section{
-  background:#000;
-  padding:80px 138px;
-}
-
-.section-line{
+.hero img{
   width:100%;
-  height:2px;
-
-  background:rgba(249,104,0,0.5);
-
-  margin-bottom:60px;
-}
-
-.preview-container{
-  display:flex;
-  justify-content:space-between;
-  align-items:left;
-  gap:80px;
-}
-
-.preview-text{
-  width:50%;
-}
-
-.preview-text h2{
-  font-size:58px;
-  font-weight:800;
-  margin-bottom:40px;
-
-  padding-left:0px;
-}
-
-.preview-text h4{
-  color:var(--blaze-orange);
-  margin-bottom:30px;
-  padding-left:38px;
-
-}
-
-.preview-text p{
-  font-size:16px;
-  color:#d8d8d8;
-  line-height:1.8;
-  margin-bottom:20px;
-  padding-left:38px;
-
-}
-
-
-.preview-btn{
-  transition:0.3s ease;
-
-  display:inline-block;
-
-  margin-top:30px;
-
-  background:var(--blaze-orange);
-
-  padding:14px 40px;
-
-  border-radius:40px;
-
-  font-size:14px;
-  font-weight:700;
-}
-
-.preview-btn:hover{
-  transform:scale(1.08);
+  height:100%;
+  object-fit:contain;
+  background:#000; /* optional: avoids empty white gaps */
 }
 
 /* =========================
-   ABOUT SECTION
+   SECTION
 ========================= */
 
-.about-section{
-  background:#000;
-  padding:70px 60px 120px;
+.section{
+  padding:80px 70px;
 }
 
-
-.section-line{
-  width:100%;
-  height:2px;
-
-  background:rgba(249,104,0,0.5);
-
-  margin-bottom:60px;
-}
-
-.anchor-offset{
-  position:relative;
-  top:-280px;
-}
-
-.about-section h1{
-  font-size:28px;
+.section-title{
+  font-size:52px;
   font-weight:800;
-
-  margin-bottom:60px;
-}
-
-.about-block{
   margin-bottom:70px;
+  color:var(--white);
 }
 
-.about-block h3{
+.orange-title{
   color:var(--blaze-orange);
-
-  margin-bottom:25px;
-
   font-size:22px;
+  font-weight:700;
+  margin-bottom:25px;
 }
 
-.about-block p{
-  color:#d8d8d8;
+.text{
+  font-size:16px;
+  line-height:1.9;
+  color:rgba(255,255,255,0.88);
+  
+  margin-bottom:22px;
+}
 
-  line-height:1.8;
-  font-size:15px;
+.section-line{
+  width:100%;
+  height:1px;
+  background:rgba(249,104,0,0.45);
+  margin:80px 0;
 }
 
 /* =========================
-   FOOTER DESIGN CCS
+   TWO COLUMN
 ========================= */
 
-footer{
-  background: radial-gradient(circle at center, #3a1f63, #000);
-  padding:50px 20px;
-  text-align:center;
-}
-
-.footer-container{
-  display:flex;
-  flex-direction:column;
+.two-column{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
   align-items:center;
-  gap:10px;
 }
 
-.footer-container p{
-  font-size:11px;
-  color:#ededed;
+/* =========================
+   IMAGE CONTAINER
+========================= */
+
+.image-box{
+  height:400px;
+  overflow:hidden;
 }
 
-.copyright{
-  color:#ffb200;
-  font-size:8px;
-  font-style:italic;
+/* =========================
+   IMAGE
+========================= */
+
+.image-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* ADD THIS RIGHT BELOW */
+.cinematic-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.horse-box{
+  height: 700px;
+  overflow: visible;
+}
+
+.horse-img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================
+   FEATURE BOX
+========================= */
+
+.feature-box{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.feature-text{
+  background:rgba(58,31,99,0.88);
+
+  border-left:4px solid var(--blaze-orange);
+
+  padding:40px 30px;
+}
+
+/* =========================
+   FULL IMAGE
+========================= */
+
+.full-image{
+  width:100%;
+  height:400px;
+  overflow:hidden;
+}
+
+.full-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* =========================
+   HISTORICAL SPACES
+========================= */
+
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:35px;
+}
+
+.card img{
+  height:320px;
+  object-fit:cover;
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.card-title{
+  color:var(--blaze-orange);
+  font-size:18px;
+  font-weight:700;
+  margin:18px 0 12px;
+}
+
+.card-text{
+  font-size:14px;
+  line-height:1.8;
+  color:rgba(255,255,255,0.82);
 }
 
 /* ==================================================
@@ -609,83 +490,50 @@ footer{
 
 @media(max-width:1024px){
 
-  /* GLOBAL SECTION SPACING */
-
-  .preview-section,
-  .info-section{
-    padding-left:32px;
-    padding-right:32px;
-  }
-
   header{
     padding:0 32px;
   }
-
-  /* LOGO */
 
   .logo-center img{
     width:160px;
   }
 
-  /* HERO */
-
-  .hero h2{
-    font-size:52px;
-  }
-
-  .hero p{
-    max-width:540px;
-    font-size:15px;
-  }
-
-  /* PREVIEW + INFO */
-
-  .preview-container,
-  .info-container{
-    flex-direction:column;
-    gap:70px;
-  }
-
-  .preview-text,
-  .historical-box,
-  .visit-box{
-    width:100%;
-  }
-
-  .preview-text h2,
-  .historical-box h2,
-  .visit-box h2{
-    font-size:42px;
-  }
-
-  /* REMOVE EXTRA PADDING */
-
-  .preview-text h4,
-  .preview-text p,
-  .historical-box h4,
-  .historical-box p{
-    padding-left:0;
-    margin-right:0;
-  }
-
-  /* DROPDOWN */
-
   .dropdown-menu{
     padding:35px 32px;
   }
 
-.dropdown-column{
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between;
-  width:100%;
-  gap:40px;
-}
+  .dropdown-column{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width:100%;
+    gap:40px;
+  }
+
   .dropdown-link{
     width:auto;
   }
-}
 
+  /* CONTENT */
+
+  .section{
+    padding:60px 32px;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+
+  .two-column,
+  .feature-box,
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    height:400px;
+  }
+}
 
 /* ==================================================
    MOBILE DEVICES
@@ -694,7 +542,6 @@ footer{
 @media(max-width:768px){
 
   /* HEADER */
-
 
   header{
     height:auto;
@@ -714,9 +561,7 @@ footer{
     gap:18px;
   }
 
-  /* =========================
-     LOGO
-  ========================= */
+  /* LOGO */
 
   .logo-center{
     position:static;
@@ -737,9 +582,7 @@ footer{
     margin-bottom:-25px;
   }
 
-  /* =========================
-     MOBILE NAV LAYOUT
-  ========================= */
+  /* NAVIGATION */
 
   .nav-left,
   .nav-right{
@@ -751,20 +594,16 @@ footer{
     gap:22px;
   }
 
-  /* TOP ROW */
   .nav-left{
     order:2;
     margin-bottom:-5px;
   }
 
-  /* BOTTOM ROW */
   .nav-right{
     order:3;
   }
 
-  /* =========================
-     BUTTON STYLE
-  ========================= */
+  /* BUTTONS */
 
   .active-btn,
   .nav-item,
@@ -787,8 +626,6 @@ footer{
     box-sizing:border-box;
   }
 
-  /* HOME ACTIVE */
-
   .active-btn{
     background:rgba(255,255,255,0.06);
   }
@@ -797,9 +634,7 @@ footer{
     color:var(--yellow-orange);
   }
 
-  /* =========================
-     TEXT
-  ========================= */
+  /* TEXT */
 
   .nav-link{
     font-size:13px;
@@ -808,19 +643,13 @@ footer{
     letter-spacing:0.5px;
   }
 
-  /* =========================
-     DROPDOWN SUMMARY
-  ========================= */
+  /* DROPDOWN */
 
   .about-dropdown-summary,
   .virtual-dropdown-summary{
     justify-content:center;
     gap:12px;
   }
-
-  /* =========================
-     DROPDOWN DOT
-  ========================= */
 
   .dropdown-dot{
     width:22px;
@@ -836,10 +665,6 @@ footer{
 
     transform:translate(-50%, -70%);
   }
-
-  /* =========================
-     DROPDOWN MENU
-  ========================= */
 
   .dropdown-menu{
     position:absolute;
@@ -859,46 +684,57 @@ footer{
     gap:14px;
   }
 
-.dropdown-link{
-  width:100%;
-  min-width:unset;
-  flex:none;
-  overflow:hidden;
-}
-
-  /* =========================
-     ABOUT SECTION
-  ========================= */
-
-  .about-section{
-    padding:260px 16px 80px;
+  .dropdown-link{
+    width:100%;
+    min-width:unset;
+    flex:none;
+    overflow:hidden;
   }
 
-  .about-section h1{
-    font-size:28px;
-    line-height:1.2;
+  /* CONTENT */
 
+  .section{
+    padding:50px 16px;
+  }
+
+  .section-title{
+    font-size:30px;
+    line-height:1.2;
     margin-bottom:40px;
   }
 
-  .about-block h3{
+  .orange-title{
     font-size:20px;
   }
 
-  .about-block p{
+  .text{
     font-size:14px;
     line-height:1.8;
   }
 
-  /* FIX ANCHOR SPACING */
-
-  .anchor-offset{
-    top:-260px;
+  .two-column,
+  .feature-box,
+  .cards-grid{
+    grid-template-columns:1fr;
   }
 
-  /* =========================
-     FOOTER
-  ========================= */
+  .feature-box{
+    gap:30px;
+  }
+
+  .hero{
+    height:280px;
+    margin-top:210px;
+  }
+
+  .image-box,
+  .full-image{
+    height:250px;
+  }
+
+
+
+  /* FOOTER */
 
   footer{
     padding:40px 16px;
@@ -915,14 +751,45 @@ footer{
   .copyright{
     font-size:8px;
   }
+}
 
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:
+  radial-gradient(circle at center,
+  var(--dark-purple),
+  #000);
+
+  padding:50px 20px;
+
+  text-align:center;
+}
+
+.footer-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.footer-container p:not(.copyright){
+  font-size:11px;
+  color:#ededed;
+}
+
+.copyright{
+  color:var(--yellow-orange);
+  font-size:8px;
+  font-style:italic;
 }
 
 </style>
 </head>
 
 <body>
-  
 <!-- =====================
      HEADER
 ===================== -->
@@ -933,34 +800,40 @@ footer{
   <div class="nav-left">
 
     <!-- HOME -->
-        <div class="nav-item">
-          <a href="index.html" class="nav-link">HOME</a>
-        </div>
-    <!-- ABOUT DROPDOWN -->
-<details class="about-dropdown-wrapper">
-  <summary class="about-dropdown-summary">
-    <span class="nav-link">ABOUT</span>
-    <div class="dropdown-dot"></div>
-  </summary>
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">HOME</a>
+    </div>
+
+    <!-- ABOUT -->
+    <details class="about-dropdown-wrapper">
+
+      <summary class="about-dropdown-summary">
+        <span class="nav-link">ABOUT</span>
+        <div class="dropdown-dot"></div>
+      </summary>
 
       <div class="dropdown-menu about-menu">
+
         <div class="dropdown-grid">
+
           <div class="dropdown-column">
 
-            <a href="ABOUT.html#historical-background" class="dropdown-link">
-              <span>Historical Background</span>
+            <a href="ABOUT.html#about-dambanang" class="dropdown-link">
+                <span>About the Dambanang Aguinaldo</span>
             </a>
 
-            <a href="ABOUT.html#cultural-significance" class="dropdown-link">
-              <span>Cultural Significance</span>
+            <a href="ABOUT.html#history-shrine" class="dropdown-link">
+                <span>History of the Aguinaldo Shrine</span>
             </a>
 
-            <a href="ABOUT.html#architectural-features" class="dropdown-link">
-              <span>Architectural Features</span>
-            </a>
+<a href="ABOUT.html#historical-spaces" class="dropdown-link">
+  <span>Historical Spaces</span>
+</a>
 
           </div>
+
         </div>
+
       </div>
 
     </details>
@@ -969,13 +842,17 @@ footer{
 
   <!-- CENTER LOGO -->
   <div class="logo-center">
-    <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" alt="Aguinaldo Shrine Logo">
+
+    <img
+    src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png"
+    alt="Aguinaldo Shrine Logo">
+
   </div>
 
   <!-- RIGHT NAV -->
   <div class="nav-right">
 
-    <!-- VIRTUAL TOUR DROPDOWN -->
+    <!-- VIRTUAL TOUR -->
     <details class="virtual-dropdown-wrapper">
 
       <summary class="virtual-dropdown-summary">
@@ -984,7 +861,9 @@ footer{
       </summary>
 
       <div class="dropdown-menu virtual-menu">
+
         <div class="dropdown-grid">
+
           <div class="dropdown-column">
 
             <a href="VIRTUAL-EXTERIOR.html" class="dropdown-link">
@@ -992,195 +871,281 @@ footer{
             </a>
 
             <a href="VIRTUAL.html" class="dropdown-link">
-              <span>Grandhall</span>
+              <span>Hallway to Balcony</span>
             </a>
 
             <a href="VIRTUAL-UNKNOWN.html" class="dropdown-link">
-              <span>UNKNOWN</span>
+              <span>Grand Hall to Dining</span>
             </a>
 
           </div>
+
         </div>
+
       </div>
 
     </details>
 
     <!-- RESEARCHERS -->
     <div class="nav-item">
-      <a href="RESEARCHERS.html" class="nav-link">RESEARCHERS</a>
+      <a href="RESEARCHERS.html" class="nav-link">
+        RESEARCHERS
+      </a>
     </div>
 
   </div>
 
 </header>
 
-<!-- =====================
-     ABOUT CONTENT
-===================== -->
+<!-- =========================
+     HERO IMAGE
+========================= -->
 
-<section class="about-section">
+<section class="full-image">
+<img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Aduinaldo's_House_Front.jpg" alt="Inang Bayan" class="cinematic-img">
+</section>
 
+<!-- =========================
+     ABOUT SECTION
+========================= -->
 
-<div class="section-line"></div>
+<section class="section" id="about-dambanang">
 
-<div id="historical-background" class="anchor-offset"></div>
+  <h1 class="section-title">
+    ABOUT THE DAMBANANG AGUINALDO
+  </h1>
 
-<h1>HISTORICAL BACKGROUND</h1>
+  <div class="two-column">
 
-<div class="about-block">
+    <div class="image-box">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/house_symbol.webp" alt="Shrine">
+    </div>
 
-<h3>About the Aguinaldo Shrine</h3>
+    <div>
 
-<p> Originally built in the 1840s and later expanded by the Aguinaldo family, the shrine served as the ancestral residence of Emilio Aguinaldo. The mansion reflects a blend of traditional Filipino and colonial architectural influences, showcasing both residential elegance and strategic design features adapted during the revolutionary era.</p>
-<br>
-<p>
-The Aguinaldo Shrine stands as one of the most significant historical landmarks in the Philippines. More than a residential home, the shrine symbolizes the country’s struggle for independence and the beginning of Filipino nationhood. Through its preserved 
-architecture, historical artifacts, and cultural symbolism, the shrine continues to educate future generations about the sacrifices and aspirations of the Filipino people during the revolutionary period.
-</p>
+      <h2 class="orange-title">
+        A Symbol of Philippine Independence
+      </h2>
 
-</div>
+      <p class="text">
+      The Dambanang Aguinaldo, also known as the Aguinaldo Shrine, is one of the most important 
+      historical landmarks in the Philippines. Located in Kawit, Cavite, it served as the ancestral 
+      residence of General Emilio Aguinaldo, the first President of the Philippine Republic.   </p>
 
-<div class="about-block">
+      <p class="text">
+      Originally built as a family home, the mansion gradually became associated with significant events 
+      in Philippine history, particularly during the revolutionary period of the late 19th century. Its 
+      architectural design reflects a blend of traditional Filipino and colonial influences, featuring 
+      spacious halls, decorative balconies, symbolic motifs, and elevated tower structures that distinguished 
+      prominent ancestral houses of the period. </p>
+      
+      <p class="text">     
+      Over time, the residence evolved from a private household into a nationally recognized cultural landmark. 
+      In 1963, Emilio Aguinaldo donated the mansion to the government to help preserve its historical and cultural 
+      significance for future generations. Today, the shrine is maintained by the National Historical Commission of 
+      the Philippines (NHCP) and continues to serve as a museum, educational site, and symbol of Filipino heritage. </p>
 
-<h3>Declaration of Independence</h3>
+  
+    </div>
 
-<p>
-On June 12, 1898, the Philippine Declaration of Independence was formally proclaimed from the balcony of the Aguinaldo residence in Kawit, Cavite. This historic event marked 
-the country's assertion of freedom from Spanish colonial rule and became one of the defining moments in Philippine history.
-</p>
+  </div>
 
-<br>
-<p>
-The balcony where the Philippine flag was first officially displayed remains one of the shrine’s most iconic and symbolic spaces, representing patriotism, sovereignty, and national identity.
-</p>
-</div>
+  <div class="section-line"></div>
 
-<div class="about-block">
+  <!-- FEATURE BOX -->
 
-<h3>Emilio Aguinaldo</h3>
+  <div class="feature-box">
 
-<p>
-Emilio Aguinaldo was a revolutionary leader, military general, and the first President of the Philippines. 
-He played a major role in the Philippine Revolution against Spanish colonization and later in the struggle for independence.
-</p>
+    <div class="feature-text">
 
-<br>
-<p> His residence in Kawit became both a family home and a strategic center during the revolution. Today, the shrine preserves his legacy and 
-contributions to Philippine history through historical collections and architectural preservation.</p>
-</div>
+      <h2 class="orange-title">
+        Who is Emilio Aguinaldo?
+      </h2>
 
-<div class="section-line"></div>
+      <p class="text">
+        Emilio Aguinaldo was a Filipino revolutionary leader and statesman who played a major role 
+        in the country’s fight for independence. He became the first President of the First Philippine 
+        Republic and led revolutionary movements against Spanish colonial rule. His contributions to 
+        Philippine history continue to shape the nation’s identity and remembrance of the struggle for freedom.
+      </p>
 
-<div id="cultural-significance" class="anchor-offset"></div>
+    </div>
 
-<h1>CULTURAL SIGNIFICANCE</h1>
-
-<div class="about-block">
-
-<h3>Architectural Symbolism</h3>
-
-<p>
-The architectural design of the shrine reflects the social status, political ideals, and patriotic symbolism of the revolutionary period. Decorative details, elevated spaces, and ceremonial areas within the structure symbolize authority, nationalism, and the aspirations for an independent nation.
-</p>
-
-</div>
-
-<div class="about-block">
-
-<h3>Design Functionality</h3>
-
-<p>
-Beyond its aesthetic qualities, the shrine was designed with practical and strategic purposes. The structure incorporates wide halls, elevated viewing areas, hidden passages, and ventilation systems suited for both residential living and political activities during times of conflict.
-</p>
-
-<br> 
-
-<p> Its layout demonstrates how architecture during the revolutionary era balanced comfort, security, and functionality.</p>
-</div>
-
-<div class="about-block">
-
-<h3>Representation of National Identity</h3>
-
-<p>
-The Aguinaldo Shrine represents Filipino resilience, patriotism, and cultural heritage. As a preserved historical landmark, it continues to strengthen public understanding of the nation’s revolutionary history and collective identity.
-</p>
-
-</div>
-
-<div class="section-line"></div>
-
-<div id="architectural-features" class="anchor-offset"></div>
-
-<h1>ARCHITECTURAL FEATURES</h1>
-
-<div class="about-block">
-
-<h3>Symbolism of the Philippine Independence</h3>
-
-<p>
-Several areas of the shrine symbolize the birth of Philippine independence, particularly the ceremonial balcony where independence was declared. The structure itself became a physical representation of the nation’s transition toward sovereignty and self-governance.
-</p>
-
-</div>
-
-<div class="about-block">
-
-<h3>Defensive and Protection Design</h3>
-
-<p>
-The shrine contains concealed and defensive architectural features designed during periods of political unrest and revolution. Historical accounts mention hidden compartments, secret passages, and strategic viewpoints intended for protection and surveillance.
-</p>
-
-</div>
-
-<div class="about-block">
-
-<h3>Concealed Structural Features</h3>
-
-<p>
-One of the most unique characteristics of the Aguinaldo Shrine is the presence of concealed architectural elements integrated within the structure. These hidden features were designed to provide security, protection, and strategic advantages during the revolutionary period.
-</p>
-<br> 
-<p> Historical accounts and preserved sections of the shrine reveal the existence of secret passages, hidden compartments, concealed doors, and observation points that were used for surveillance, escape, and the protection of important individuals and documents. Some areas of the house were intentionally designed to disguise access points, reflecting the political tensions and dangers experienced during the struggle for independence.</p>
-</div>
-
-<div class="about-block">
-
-<h3>Residential Function of the House</h3>
-
-<p>
-Despite its political and historical significance, the Aguinaldo Shrine originally served as a family residence. The structure includes living quarters, receiving areas, dining spaces, and traditional household layouts common in affluent Filipino homes during the Spanish colonial period.
-</p>
-
-</div>
+<div class="image-box horse-box">
+<img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/aguinaldo_horse.webp" 
+     alt="Shrine" 
+     class="horse-img">
+    </div>
+  </div>
 
 </section>
 
-<!-- =====================================================================================================================================================
-     									FOOTER DETAILS
-====================================================================================================================================================== -->
+<!-- =========================
+     HISTORY SECTION
+========================= -->
+
+<section class="section" id="history-shrine">
+
+  <h1 class="section-title">
+    HISTORY OF THE AGUINALDO SHRINE
+  </h1>
+  
+  <div class="two-column">
+
+    <div>
+
+      <h2 class="orange-title">
+        The Proclamation of Philippine Independence
+      </h2>
+
+     <p class="text">
+  One of the most historically significant areas of the shrine is the Independence Balcony, 
+  where the Philippine flag was publicly displayed during the declaration of independence on June 12, 1898. 
+  This event marked the formal proclamation of the country’s independence from Spanish colonial rule and became 
+  a defining moment in Philippine history.
+</p>
+
+<p class="text">
+  Although the balcony seen today is widely associated with the historic proclamation of independence, historical 
+  records and NHCP references indicate that the present “Independence Balcony” was added during major renovations 
+  of the mansion between 1919 and the 1920s. The original declaration in 1898 was reportedly made from the central 
+  window of the grand hall rather than the balcony itself. Over time, however, the balcony became an important commemorative 
+  feature of the shrine and is now used during Independence Day ceremonies and national commemorations.
+</p>
+
+<p class="text">
+  Today, the Independence Balcony continues to serve as a site for commemorative ceremonies, historical gatherings, 
+  and Independence Day celebrations. It remains one of the most recognizable features of the Dambanang Aguinaldo, 
+  connecting visitors to the country’s historical memory and national heritage.
+</p>
+
+    </div>
+
+    <div class="image-box">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/small-window.png" alt="Historical Area">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     FULL IMAGE
+========================= -->
+
+<section class="full-image">
+<img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Inang-bayan.png" alt="Inang Bayan" class="cinematic-img">
+</section>
+
+<!-- =========================
+     CULTURAL SECTION
+========================= -->
+
+<section class="section" id="historical-spaces">
+
+  <h1 class="section-title">
+    HISTORICAL SPACES
+  </h1>
+
+  <p class="text">
+    The Aguinaldo Shrine remains an important cultural landmark that preserves the memory of the Philippine 
+    Revolution and the nation’s early independence movement. Inside the mansion are historically significant 
+    spaces such as the Grand Hall, Veterans Hall, Family Dining Hall, Watch Tower, and Azotea, each reflecting
+    the lifestyle, political history, and architectural character of the Aguinaldo household during the late 
+    colonial period.
+  </p>
+
+</section>
+
+<!-- =========================
+     HISTORICAL SPACES
+========================= -->
+
+<section class="section">
+
+  <h1 class="section-title">
+    HISTORICAL SPACES
+  </h1>
+
+  <div class="cards-grid">
+
+    <div class="card">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Independence-Balcony.png" alt="Balcony">
+      <h3 class="card-title">Independence Balcony</h3>
+      <p class="card-text">
+        The balcony where the Philippine Independence was proclaimed.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Grand%20Hall.JPG" alt="Grand Hall">
+      <h3 class="card-title">Grand Hall</h3>
+      <p class="card-text">
+        A formal gathering place for meetings and social events.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Family-Formal-Dining.JPG" alt="Dining Hall">
+      <h3 class="card-title">Family Dining Hall</h3>
+      <p class="card-text">
+        One of the preserved interior spaces of the mansion.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Veterans-Hall.png" alt="Hallway">
+      <h3 class="card-title">Veteran Hall</h3>
+      <p class="card-text">
+        A hallway dedicated to preserving revolutionary memories.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Tower.png" alt="Tower">
+      <h3 class="card-title">Watch Tower</h3>
+      <p class="card-text">
+        A tower that symbolized vigilance during revolutionary times.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/Azotea.png" alt="Azotea">
+      <h3 class="card-title">Azotea</h3>
+      <p class="card-text">
+        An open balcony space known for ventilation and views.
+      </p>
+    </div>
+
+  </div>
+  </section>
+<!-- =====================
+     FOOTER
+===================== -->
 
 <footer>
 
   <div class="footer-container">
 
-    <img src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png" style="width:250px; height:auto;">
+    <img
+    src="https://timelessin3d.github.io/Dambanang-Aguinaldo/images/logo.png"
+    style="width:250px; height:auto;">
 
     <p>Interactive Heritage Visualization</p>
+
     <p>Bachelor of Multimedia Arts Thesis Project</p>
+
     <p>St. Dominic College of Asia | 2026</p>
 
     <p class="copyright">
-      © 2026 Dambanang Aguinaldo | Developed with Web Technologies and 3D Visualization Tools
+      © 2026 Dambanang Aguinaldo |
+      Developed with Web Technologies
+      and 3D Visualization Tools
     </p>
 
   </div>
 
 </footer>
-<!-- =====================================================================================================================================================
-     									Forda not overlapping choice box
-====================================================================================================================================================== -->
 
 <script>
 
@@ -1211,3 +1176,4 @@ dropdowns.forEach((dropdown) => {
 </script>
 </body>
 </html>
+
