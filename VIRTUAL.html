@@ -580,21 +580,28 @@ footer{
   ========================= */
 
   header{
+    width:100%;
     height:auto;
 
-    padding:20px 20px 25px;
+    padding:18px 16px 20px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
 
+    gap:16px;
+
     background:
     radial-gradient(circle at center,
     var(--dark-purple),
     #000);
 
-    gap:18px;
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:1000;
   }
 
   /* =========================
@@ -605,23 +612,21 @@ footer{
     position:static;
     transform:none;
 
+    order:1;
+
     display:flex;
     justify-content:center;
     align-items:center;
-
-    order:1;
-
-    margin-bottom:10px;
   }
 
   .logo-center img{
-    width:170px;
+    width:150px;
     height:auto;
-    margin-bottom:-25px;
+    margin:0;
   }
 
   /* =========================
-     MOBILE NAV LAYOUT
+     NAVIGATION
   ========================= */
 
   .nav-left,
@@ -631,31 +636,26 @@ footer{
     display:grid;
     grid-template-columns:1fr 1fr;
 
-    gap:22px;
+    gap:12px;
   }
 
-  /* TOP ROW */
   .nav-left{
     order:2;
-    margin-bottom:-5px;
   }
 
-  /* BOTTOM ROW */
   .nav-right{
     order:3;
   }
 
   /* =========================
-     BUTTON STYLE
+     BUTTONS
   ========================= */
 
-  .active-btn,
   .nav-item,
   .about-dropdown-summary,
   .virtual-dropdown-summary{
-
     width:100%;
-    height:35px;
+    min-height:42px;
 
     border-radius:10px;
 
@@ -665,23 +665,14 @@ footer{
     align-items:center;
     justify-content:center;
 
-    padding:0 18px;
-
-    box-sizing:border-box;
+    padding:10px 14px;
   }
 
-  /* REMOVE EXTRA BG INSIDE */
-  .virtual-dropdown-summary .active-btn{
+  .active-btn{
     background:transparent;
-    padding:0;
     height:auto;
     min-width:auto;
-  }
-
-  /* ACTIVE TEXT */
-
-  .active-btn .nav-link{
-    color:var(--yellow-orange);
+    padding:0;
   }
 
   /* =========================
@@ -689,56 +680,27 @@ footer{
   ========================= */
 
   .nav-link{
-    font-size:13px;
+    font-size:12px;
     font-weight:700;
-
-    letter-spacing:0.5px;
+    letter-spacing:0.4px;
+    text-align:center;
   }
 
   /* =========================
-     DROPDOWN SUMMARY
-  ========================= */
-
-  .about-dropdown-summary,
-  .virtual-dropdown-summary{
-    justify-content:center;
-    gap:12px;
-  }
-
-  /* =========================
-     DROPDOWN DOT
-  ========================= */
-
-  .dropdown-dot{
-    width:22px;
-    height:22px;
-  }
-
-  .dropdown-dot::after{
-    border-left:5px solid transparent;
-    border-right:5px solid transparent;
-    border-bottom:8px solid white;
-
-    border-top:none;
-
-    transform:translate(-50%, -70%);
-  }
-
-  /* =========================
-     DROPDOWN MENU
+     DROPDOWN
   ========================= */
 
   .dropdown-menu{
     position:absolute;
 
-    top:75px;
+    top:100%;
     left:0;
 
     width:100%;
 
-    padding:18px;
+    padding:16px;
 
-    border-radius:16px;
+    border-radius:0 0 16px 16px;
   }
 
   .dropdown-column{
@@ -751,25 +713,15 @@ footer{
   }
 
   /* =========================
-     BREADCRUMB
+     BREADCRUMB SPACING
   ========================= */
 
   .breadcrumb-section{
-    padding:260px 16px 25px;
-  }
-
-  .breadcrumb{
-    gap:10px;
-    flex-wrap:wrap;
-  }
-
-  .breadcrumb a,
-  .breadcrumb p{
-    font-size:14px;
+    padding:250px 16px 25px;
   }
 
   /* =========================
-     SKETCHFAB
+     VIEWER
   ========================= */
 
   .viewer-spacing{
@@ -792,18 +744,15 @@ footer{
     width:180px !important;
   }
 
-.footer-container p{
-  font-size:11px;
-  color:#ededed;
-}
+  .footer-container p{
+    font-size:10px;
+    color:#ededed;
+  }
 
-.footer-container .copyright{
-  color:var(--yellow-orange);
-  font-weight:600;
-  font-size:8.6px;
-  font-style:italic;
-  margin-top:10px;
-}
+  .footer-container .copyright{
+    color:var(--yellow-orange);
+    font-size:8px;
+  }
 
 }
 
